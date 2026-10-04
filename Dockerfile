@@ -18,10 +18,9 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # Pre-download required NLTK datasets
 RUN python -c "import nltk; nltk.download('stopwords', quiet=True); nltk.download('wordnet', quiet=True); nltk.download('omw-1.4', quiet=True)"
 
-# Copy application source code, trained models, and structure
+# Copy application source code, trained models, tests, and documentation
 COPY app/ app/
 COPY models/ models/
-COPY data/ data/
 COPY tests/ tests/
 COPY README.md .
 
